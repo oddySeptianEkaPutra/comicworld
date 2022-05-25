@@ -1,0 +1,112 @@
+[
+{
+    "title": "Light Novel Naruto: Innocent Heart, Demonic Blood",
+    "price": 50000,
+    "genre": "action",
+    "author": "Mashashi Kishimoto",
+    "isbn": "9786020231747",
+    "totalPage": 40,
+    "publisher": "Elex Media Komputindo",
+    "stock": 15,
+    "imgurl": "https://cdn.gramedia.com/uploads/items/9786020479170_Light-Novel-N.jpg"
+},
+{
+    "title": "Light Novel Naruto: Chronicle of The Tunderclap - The Day The Wolf Howled",
+    "price": 56000,
+    "genre": "action",
+    "author": "Mashashi Kishimoto",
+    "isbn": "9786230031328",
+    "totalPage": 218,
+    "publisher": "Elex Media Komputindo",
+    "stock": 20,
+    "imgurl": "https://cdn.gramedia.com/uploads/items/722010165_cover_LN_Naruto_The_Day_The_Wolf_Howled.jpg"
+},
+{
+    "title": "Komikus Shojo Nozaki 10",
+    "price": 25000,
+    "genre": "romance",
+    "author": "Izumi Tsubaki",
+    "isbn": "9786020489216",
+    "totalPage": 170,
+    "publisher": "Elex Media Komputindo",
+    "stock": 15,
+    "imgurl": "https://cdn.gramedia.com/uploads/items/9786020489216_Nozaki_cover_.jpg"
+},
+{
+    "title": "Fairy Tail Happy Adventure 01",
+    "price": 40000,
+    "genre": "adventure",
+    "author": "Hiro Mashima",
+    "isbn": "9786230014895",
+    "totalPage": 160,
+    "publisher": "Elex Media Komputindo",
+    "stock": 15,
+    "imgurl": "https://cdn.gramedia.com/uploads/items/9786230014895_Cov_FairyTail_Happy_01.jpg"
+},
+{
+    "title": "Fairy Tail 100 Years Quest 01",
+    "price": 40000,
+    "genre": "adventure",
+    "author": "Hiro Mashima",
+    "isbn": "9786230016165",
+    "totalPage": 200,
+    "publisher": "Elex Media Komputindo",
+    "stock": 15,
+    "imgurl": "https://cdn.gramedia.com/uploads/items/720010532_Cov_FairyTail_100_th_01_1.jpg"
+},
+{
+    "title": "Akasha : Another 01",
+    "price": 33750,
+    "genre": "Horror",
+    "author": "Yukita Ayatsuji",
+    "isbn": "9786230303906",
+    "totalPage": 185,
+    "publisher": "m&c!",
+    "stock": 15,
+    "imgurl": "https://cdn.gramedia.com/uploads/items/9786230303906_ANOTHER_01.jpg"
+},
+{
+    "title": "Psychic Detective Yakumo Another Files - The Coffin of Prayer",
+    "price": 66750,
+    "genre": "Horror",
+    "author": "Manabu Kaminaga",
+    "isbn": "9786024809553",
+    "totalPage": 304,
+    "publisher": "m&c!",
+    "stock": 15,
+    "imgurl": "https://cdn.gramedia.com/uploads/items/9786230303906_ANOTHER_01.jpghttps://cdn.gramedia.com/uploads/items/9786024809553_PSYCHIC_DETECTIVE_YAKUMO-ANOTHER_FILES-The_coffin_of_Prayer-R1.jpg"
+},
+{
+    "title": "Dream Walker ~ Dreamscape 5 Pillars",
+    "price": 10000,
+    "genre": "Fantasy",
+    "author": "Yeo Hui Xuan",
+    "isbn": "9789814563222",
+    "totalPage": 22,
+    "publisher": "Tcz Studio Pte. Ltd.",
+    "stock": 15,
+    "imgurl": "https://ebooks.gramedia.com/ebook-covers/9636/general_small_covers/SG_ADE2014MTH03DWDPFPM_S.jpg"
+},
+{
+    "title": "Spy x Family",
+    "price": 45000,
+    "genre": "Action",
+    "author": "Endo Tatsuya",
+    "isbn": "9786230022272",
+    "totalPage": 212,
+    "publisher": "Elex Media Komputindo",
+    "stock": 20,
+    "imgurl": "https://cdn.gramedia.com/uploads/items/9786230022272_Spy_x_Family_02.jpg"
+},
+{
+    "title": "Jujutsu Kaisen 01",
+    "price": 40000,
+    "genre": "Action",
+    "author": "Gege Akutami",
+    "isbn": "9786230022180",
+    "totalPage": 200,
+    "publisher": "Elex Media Komputindo",
+    "stock": 20,
+    "imgurl": "https://cdn.gramedia.com/uploads/items/9786230022180_Jujutsukaisen_1.jpg"
+}
+]
