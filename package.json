@@ -1,0 +1,29 @@
+{
+  "name": "comicworld",
+  "version": "1.0.0",
+  "description": "Aplikasi berbasis website untuk pengguna agar bisa melakukan pembelian comic secara online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oddySeptianEkaPutra/comicworld.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oddySeptianEkaPutra/comicworld/issues"
+  },
+  "homepage": "https://github.com/oddySeptianEkaPutra/comicworld#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "pg": "^8.7.3",
+    "sequelize": "^6.20.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
+  }
+}
