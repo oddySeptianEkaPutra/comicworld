@@ -5,4 +5,7 @@ npx sequelize model:create --name Profile --attributes firstName:string,lastName
 
 npx sequelize model:create --name User --attributes email:string,password:string,role:string
 
-npx sequelize model:create --name Transaction --attributes transactionNumber:string,dateTransaction:date,price:integer
+npx sequelize model:create --name Transaction --attributes transactionNumber:string,dateTransaction:date,price:integer,quantity:integer
+
+
+
