@@ -10,12 +10,14 @@ class UserController {
         const { email, password, role} = req.body
         User.create({ email, password, role })
             .then((newUser) => {
-               const {firstName, lastName} = req.body 
+               const {firstName, lastName, phoneNumber, address} = req.body 
                const {id} = newUser
-               console.log(id, firstName, lastName)
+               console.log(id, firstName, lastName, phoneNumber, address)
                Profile.create({
                    firstName: firstName,
                    lastName: lastName,
+                   phoneNumber: phoneNumber,
+                   address: address,
                    UserId: id
                })
                .then(()=>{

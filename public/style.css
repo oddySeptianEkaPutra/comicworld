@@ -4,7 +4,7 @@ body{
  padding: 0;
  background: radial-gradient(#c2285e,#a72534,#92202d);
  height: 100vh;
- overflow: hidden;
+ overflow: visible;
  font-family: 'Noto Sans TC', sans-serif;
 }
 .center{

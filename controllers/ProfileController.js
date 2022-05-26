@@ -5,12 +5,13 @@ class ProfileController {
     static showProfile(req, res){ 
         const id = req.session.UserId
         Profile.findOne({
+            include: User,
             where:{
                 UserId: id
             }
         })
         .then((profile)=>{
-            res.send(profile)
+            res.render('profile', {profile})
         })
         .catch((err)=>{
             console.log(err)
