@@ -24,6 +24,13 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Transaction',
+    hooks:{
+      beforeCreate(data, option){
+        data.transactionNumber = `${data.UserId}-${new Date().getTime()}`
+        data.dateTransaction = new Date()
+        data.price = (data.quantity * data.price)
+      }
+    }
   });
   return Transaction;
 };

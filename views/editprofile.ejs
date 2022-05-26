@@ -43,13 +43,23 @@
                                     <div class="tab-pane fade show active" id="basicInfo" role="tabpanel"
                                         aria-labelledby="basicInfo-tab">
 
+                                        <form action="/Edit_Profile" method="post">
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;"> First Name </label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                <input type="text" name="firstName" value="<%= profile.firstName%>" >
+                                            </div>
+                                        </div>
+                                        <hr />
 
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;"> Full Name </label>
+                                                <label style="font-weight:bold;"> Last Name </label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                <%= profile.fullName %>
+                                                <input type="text" name="lastName" value="<%= profile.lastName%>" >
                                             </div>
                                         </div>
                                         <hr />
@@ -59,35 +69,25 @@
                                                 <label style="font-weight:bold;">Phone Number</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                <%= profile.phoneNumber %>
+                                                <input type="text" name="phoneNumber" value="<%= profile.phoneNumber%>" >
                                             </div>
                                         </div>
                                         <hr />
                                         
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;">Email</label>
-                                            </div>
-                                            <div class="col-md-8 col-6">
-                                                <%= profile.User.email %>
-                                            </div>
-                                        </div>
-                                        <hr />
-
-
-                                        <div class="row">
-                                            <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight:bold;">Address</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                <%= profile.address %>
+                                                <input type="text" name="address" value="<%= profile.address%>" >
                                             </div>
                                         </div>
                                         <hr />
 
-                                        <a href="/Edit_Profile"><button>Edit Profile</button></a>
-                                        <a href="/comiclist"><button >Return</button></a>
 
+                                        <a href="/Edit_Profile"><button type="submit">Update Profile</button></a>
+                                        <a href="/comiclist"><button >Return</button></a>
+                                    </form>
                                     </div>
                                 </div>
                             </div>
