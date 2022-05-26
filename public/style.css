@@ -41,7 +41,12 @@ form input{
 }
 form input[type="password"]{
  margin-top: 20px;
- margin-bottom: 20px;
+
+}
+
+form input[name="role"]{
+    margin-top: 20px;
+   
 }
 form i{
  position: absolute;

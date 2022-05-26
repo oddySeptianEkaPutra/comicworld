@@ -1,0 +1,181 @@
+/* CSS for style layout start*/
+.nav {
+    padding: 0px 50px;
+       font-family: sans-serif;
+   }
+    
+    .nav .menu-btn {
+     display:none;
+    }
+     
+   .nav-content {
+    padding: 0;
+    list-style-type: none;
+    display: inline-block;
+    margin: 0px;
+   }
+    
+    .nav-content li {
+     display: inline-block;
+    }
+     
+     .nav-content li a {
+      text-decoration:none;
+      padding: 14px 10px;
+      display: flex;
+     }
+      
+      .nav-content li a .fa-caret-down {
+       padding: 0px 10px;
+      }
+    
+   .dropdown .close-dropdown .fa-times {
+    padding-right:10px;
+    float: right;
+    display:none;
+   }
+    
+   .dropdown:hover .dropdown-menu {
+       display: block;
+   }
+    
+   .dropdown-menu {
+       position: absolute;
+       z-index: 1;
+       min-width: 130px;
+    display:none;
+   }
+    
+   .search-area {
+    float:right;
+    list-style-type: none;
+    display: inline-block;
+    padding: 8px;
+   }
+    
+    .search-area input {
+     border-radius: 4px;
+     padding: 6px;
+     transition: all .5s;
+    }
+     
+    .search-area input:focus {
+     border-radius: 4px;
+     outline: none;
+    }
+    
+   .btn-search {
+    border-radius: 4px;
+    padding: 6px;
+       cursor: pointer;
+    transition: all .5s;
+   }
+    
+   svg:not(:root).svg-inline--fa {
+       padding-right: 5px;
+   }
+   /*  CSS for style layout end*/
+    
+    
+   /* CSS Media Query for 768p start */
+   @media screen and (max-width: 768px) {
+     
+    .bottom-border-nav{
+     border-bottom:0.1px solid;
+    }
+     
+    .nav {
+     padding: 0px;
+    }
+     
+    .nav .menu-btn {
+     display:block;
+     padding: 10px;
+     font-size:2rem;
+    }
+     
+    .nav-elements {
+     display:none;
+    }
+     
+    .nav-sky .search-area {
+     border-top: 1px solid #fff;
+    }
+     
+    .nav-content {
+     display: block;
+    }
+     
+     .nav-content li {
+      display: block;
+     }
+     
+    .dropdown-menu {
+     position: relative;
+     min-width: auto;
+    }
+     
+     .dropdown-menu a {
+      padding-left: 20px !important;
+     }
+      
+    .search-area {
+     float: none;
+     width: 100%;
+     padding: 12px 8px;
+     border-top:0.1px solid;
+    }
+   } 
+   /* CSS Media Query for 768p end */
+    
+    
+   /* CSS for sky theme start*/
+   .nav-sky {
+    color:#fff;
+    background-image: linear-gradient(#8d8d8d, #b3b3b3);
+   }
+    
+    .nav-sky .nav-content li a {
+     color:#fff;
+    }
+     
+    .nav-sky .nav-content li a:hover, .nav-sky .dropdown:hover .dropdown-link {
+     background-image: linear-gradient(#5a5a5a, #8c8e90);
+    }
+      
+    .nav-sky .dropdown-menu {
+     background-color: #b8b8b9;
+     box-shadow: 0px 5px 10px #2c2c2c;
+    }
+     
+    .nav-sky .search-area input {
+     color: #fff;
+     background: transparent;
+     border: 1px solid #fff;
+    }
+     
+    .nav-sky .search-area input:focus {
+     box-shadow: 0px 0px 10px #fff;
+    }
+    
+     
+    .nav-sky .search-area input::placeholder {
+     color:#fff;
+    }
+     
+    .nav-sky .btn-search {
+     background: transparent;
+     border: 1px solid #fff;    
+     color: #fff;
+    }
+     
+    .nav-sky .btn-search:hover, .btn-search:focus {
+     background-color: #5a5a5a;
+     border: 1px solid #2f3030;    
+     color: #fff;
+    }
+    
+    .nav-sky .active {
+     background-image: linear-gradient(#4d4d4d, #6b6b6b);
+    }
+   /* CSS for sky theme end*/
