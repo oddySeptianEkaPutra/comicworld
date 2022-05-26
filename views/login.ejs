@@ -13,6 +13,9 @@
             Login Form
          </div>
          <form action="/login" method="post">
+            <% if (error) { %>
+             <p style="color: red; margin-bottom: 10px;" ><%= error %> </p>
+            <% } %>
             <input type="text" placeholder="email" name="email">
             <i class="far fa-envelope"></i>
             <input id="pswrd" type="password" placeholder="Password" name="password">
