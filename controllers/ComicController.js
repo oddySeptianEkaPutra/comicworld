@@ -4,13 +4,26 @@ const { Op } = require ('sequelize')
 
 class ComicController{
     static ShowAll(req, res){
-        Comic.findAll({
+        let search = req.query.search;
+
+        let options = {
             where: {
                 stock: {
                     [Op.gt]: 0
                 }
             }
-        })
+        }
+
+        if(search) {
+            options.where = {
+                ...options.where,
+                title: {
+                    [Op.iLike]: `%${search}%`
+                }
+            }
+        }
+
+        Comic.findAll(options)
         .then((comic)=>{
             const user = req.query.user
             res.render('comiclist', {comic, formatMoney, user})
@@ -20,7 +33,8 @@ class ComicController{
         })
     }
     static addBook(req, res) {
-        res.render("formAddbook");
+        const errors = req.query.errors;
+        res.render("formAddbook", {errors});
     }
 
     static saveBook(req, res) {
@@ -38,7 +52,14 @@ class ComicController{
 
         Comic.create(newBook)
         .then(() => res.redirect("/comiclist"))
-        .catch((err) => res.send(err));
+        .catch((err) => {
+            if(err.name === "SequelizeValidationError") {
+                const errors = err.errors.map(el => el.message);
+                res.redirect(`/comiclist/addBook?errors=${errors}`);
+            } else {
+                res.send(err);
+            }
+        });
     }
 
     static emptyStock(req, res) {

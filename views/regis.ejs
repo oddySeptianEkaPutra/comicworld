@@ -12,6 +12,12 @@
          <div class="header">
             Register Form
          </div>
+         <%if(errors){%>
+            <% errors= errors.split(",")%> 
+            <% errors.forEach(el => { %>
+               <pre style="color: whitesmoke;"><%= el %> </pre>
+            <% }) %>
+         <%}%>
          <form action="/register" method="post">
             <input type="text" placeholder="First Name" name="firstName" style="margin-bottom: 10px;">
             <input type="text" placeholder="Last Name" name="lastName" style="margin-bottom: 10px;">

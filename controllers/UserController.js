@@ -3,7 +3,8 @@ const bcrypt = require('bcryptjs')
 
 class UserController {
     static registerForm(req, res) {
-        res.render('regis')
+        const errors = req.query.errors;
+        res.render('regis', {errors});
     }
 
     static registerPost(req, res) {
@@ -26,7 +27,12 @@ class UserController {
                })
             })
             .catch((err) => {
-                res.send(err)
+                if(err.name === "SequelizeValidationError") {
+                    const errors = err.errors.map(el => el.message);
+                    res.redirect(`/register?errors=${errors}`);
+                } else {
+                    res.send(err);
+                }
             })
     }
     static loginForm(req, res) {
