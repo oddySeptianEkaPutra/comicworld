@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="comiclist.css">
+    <link rel="stylesheet" href="nav.css">
+    <title>ComicWorld</title>
+</head>
+
+<body>
+
+    <div class="content">
+
+        <div class="container">
+            <div class="nav nav-sky">
+
+                <div class="menu-btn"> <i class="fas fa-bars"></i> </div>
+
+                <div class="nav-elements">
+
+                    <ul class="nav-content">
+
+                        <li> <a href="/comiclist" title="Home" class="active"> <i class="fas fa-home"></i> Galeri </a> </li>
+
+                        <li> <a href="#" title="About"> <i class="fas fa-address-card"></i> About </a> </li>
+
+                        <li>
+
+                            <div class="dropdown">
+
+                                <a href="#" class="dropdown-link" title="Gallery">
+                                    <i class="fas fa-camera"></i> Admin <i class="fas fa-caret-down"> </i>
+                                </a>
+
+                                <div class="dropdown-menu">
+
+                                    <a href="#" title="Option 1"> Add Book </a>
+                                    <a href="#" title="Option 2"> Restock </a>
+
+                                </div>
+
+                            </div>
+
+                        </li>
+
+                        <li> <a href="#" title="Contact"> <i class="fas fa-phone"></i> Contact </a> </li>
+
+                    </ul>
+
+                    <form class="search-area">
+                        <input type="text" name="search" placeholder="Search Item" title="Search Item">
+                        <button class="btn-search" name="search-button" title="Search">Search</button>
+                    </form>
+
+                </div>
+
+            </div>
+            <br></br>
+
+            <div class="table-responsive custom-table-responsive">
+
+                <table class="table custom-table">
+                    <thead>
+                        <tr>
+                            <th style="font-size: 15px;">Comic</th>
+                            <th style="font-size: 15px;">Title</th>
+                            <th style="font-size: 15px;">Genre</th>
+                            <th style="font-size: 15px;">ISBN</th>
+                            <th style="font-size: 15px;">Publisher</th>
+                            <th style="font-size: 15px;">Total Page</th>
+                            <th style="font-size: 15px;">Price</th>
+                            <th style="font-size: 15px;">Stock</th>
+                            <th style="font-size: 15px;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% comic.forEach(element=> { %>
+
+                            <tr>
+                                <td> <img src=<%=element.imgurl%> width="120" height="200" alt="..."></td>
+                                <td style="font-size: 12px;">
+                                    <%= element.title %>
+                                </td>
+                                <td style="font-size: 12px;">
+                                    <%= element.genre %>
+                                </td>
+                                <td style="font-size: 12px;">
+                                    <%= element.isbn %>
+                                </td>
+                                <td style="font-size: 12px;">
+                                    <%= element.publisher %>
+                                </td>
+                                <td style="font-size: 12px;">
+                                    <%= element.totalPage %>
+                                </td>
+                                <td style="font-size: 12px;">
+                                    <%= formatMoney(element.price)%>
+                                </td>
+                                <td style="font-size: 12px;">
+                                    <%= element.stock %>
+                                </td>
+                                <td>
+                                    <a href="/comiclist/restock/<%= element.id %>">
+                                        <button style="font-size: 12px;">Restock</button>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="spacer">
+                                <td colspan="100"></td>
+                            </tr>
+                            <% }) %>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
