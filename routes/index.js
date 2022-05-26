@@ -1,7 +1,19 @@
-const Controller = require("../controllers");
-const ComicController = require('../controllers/ComicController')
+const ComicController = require('../controllers/ComicController');
+const ProfileController = require('../controllers/ProfileController');
+const Profile = require('../controllers/ProfileController');
 const UserController = require("../controllers/UserController");
 const router = require("express").Router();
+
+const isAdmin = function (req, res, next){
+    if(req.session.UserId && req.session.role !== "admin"){
+        const error = 'Access Denied'
+        res.redirect(`/login?error=${error}`)
+    } else{
+        next()
+    }
+}
+
+router.get('/', UserController.loginForm)
 
 router.get('/register', UserController.registerForm)
 
@@ -11,20 +23,27 @@ router.get('/login', UserController.loginForm)
 
 router.post('/login', UserController.loginPost)
 
-router.get('/comiclist', ComicController.ShowAll)
+router.get('/logout', UserController.getlogout)
 
-router.get('/comiclist/add', ComicController.addBook)
 
-router.post('/comiclist/add', ComicController.saveBook)
+router.use(function(req, res, next){
+    console.log(req.session)
+    if(!req.session.UserId){
+        const error = 'Please login First'
+        res.redirect(`/login?error=${error}`)
+    } else{
+        next()
+    }
+})
 
-router.get('/comiclist/restock', ComicController.emptyStock);
+router.get('/comiclist', ComicController.ShowAll);
+router.get('/restock',isAdmin, ComicController.emptyStock);
+router.get('/restock/:id',isAdmin, ComicController.restock);
+router.get('/delete/:id',isAdmin, ComicController.deleteBook);
+router.get('/comiclist/addBook', isAdmin, ComicController.addBook)
+router.post('/comiclist/addBook', isAdmin, ComicController.saveBook)
 
-router.get('/comiclist/restock/:id', ComicController.restock);
-
-// router.get('/dashboard', (req,res)=>{
-//     res.send(`berhasil`)
-// })
-
+router.get('/Profile', ProfileController.showProfile)
 
 
 module.exports = router; 

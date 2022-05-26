@@ -1,6 +1,6 @@
 const { Comic } = require('../models')
-const { Op } = require("sequelize")
 const formatMoney = require('../helpers/formatMoney')
+const { Op } = require ('sequelize')
 
 class ComicController{
     static ShowAll(req, res){
@@ -12,15 +12,15 @@ class ComicController{
             }
         })
         .then((comic)=>{
-            res.render('comiclist', {comic, formatMoney})
+            const user = req.query.user
+            res.render('comiclist', {comic, formatMoney, user})
         })
         .catch((err)=>{
             console.log(err)
         })
     }
-
     static addBook(req, res) {
-        res.render("formAddBook");
+        res.render("formAddbook");
     }
 
     static saveBook(req, res) {
@@ -50,7 +50,7 @@ class ComicController{
             }
         })
         .then((comic)=>{
-            res.render('emptyStock', {comic, formatMoney})
+            res.render('emptystock', {comic, formatMoney})
         })
         .catch((err)=>{
             console.log(err)
@@ -58,9 +58,16 @@ class ComicController{
     }
 
     static restock(req, res) {
-        Comic.increment({stock: 10}, {where: {id: +req.params.id}})
-        .then(() => res.redirect("/comiclist/restock"))
-        .catch(err => res.send(err));
+        Comic.increment({stock: 12}, {where: {id: +req.params.id}})
+        .then(() => res.redirect("/restock"))
+        .catch(err => console.log(err));
+    }
+    static deleteBook(req, res){
+        Comic.destroy({where: {
+            id: +req.params.id
+        }})
+        .then(() => res.redirect("/restock"))
+        .catch(err => console.log(err));
     }
 }
 

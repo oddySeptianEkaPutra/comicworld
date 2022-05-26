@@ -13,12 +13,18 @@
             Register Form
          </div>
          <form action="/register" method="post">
+            <input type="text" placeholder="First Name" name="firstName" style="margin-bottom: 10px;">
+            <input type="text" placeholder="Last Name" name="lastName" style="margin-bottom: 10px;">
             <input type="text" placeholder="email" name="email">
             <i class="far fa-envelope"></i>
             <input id="pswrd" type="password" placeholder="Password" name="password">
             <i class="fas fa-lock" onclick="show()"></i>
-            <input type="text" placeholder="role" name="role">
-            <i class="fa-solid fa-face-smile"></i>
+            <select name="role" style="margin-top: 10px;">
+               <option disabled selected>Role</option>
+               <option value="admin">admin</option>
+               <option value="customer">customer</option>
+           </select>
+           <br>
             <input type="submit" value="Sign Up">
             <a href="/login">already be a member?</a>
             
