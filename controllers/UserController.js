@@ -1,4 +1,4 @@
-const { User } = require('../models')
+const { User, Profile } = require('../models')
 const bcrypt = require('bcryptjs')
 
 class UserController {
@@ -7,10 +7,21 @@ class UserController {
     }
 
     static registerPost(req, res) {
-        const { email, password, role } = req.body
+        const { email, password, role} = req.body
         User.create({ email, password, role })
             .then((newUser) => {
-                res.redirect('./login')
+               const {firstName, lastName} = req.body 
+               const {id} = newUser
+               console.log(id, firstName, lastName)
+               Profile.create({
+                   firstName: firstName,
+                   lastName: lastName,
+                   UserId: id
+               })
+               .then(()=>{
+                   
+                   res.redirect('/login')
+               })
             })
             .catch((err) => {
                 res.send(err)
@@ -28,7 +39,10 @@ class UserController {
                 if (user) {
                     const validation = bcrypt.compareSync(password, user.password)
                     if (validation) {
-                        return res.redirect('/comiclist')
+                        req.session.UserId = user.id
+                        req.session.role = user.role
+                        const email = user.email
+                        return res.redirect(`/comiclist?user=${email}`)
                     } else {
                         const error = `invalid password`
                         return res.redirect(`/login?error=${error}`)
@@ -38,6 +52,15 @@ class UserController {
                     return res.redirect(`/login?error=${error}`)
                 }
             })
+    }
+    static getlogout(req,res){
+       req.session.destroy((err)=>{
+            if(err) {
+                res.send(err)
+            }else{
+                res.redirect('/login')
+            }
+       })
     }
 }
 

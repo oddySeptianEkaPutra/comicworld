@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comic World - Add Book</title>
+</head>
+<body>
+  <h1>Add Book</h1>
+  <hr>
+  <form action="/comiclist/add" method="post">
+    <label>Title</label><br>
+    <input type="text" name="title"><br><br>
+    <label>Price</label><br>
+    <input type="number" name="price"><br><br>
+    <label>Genre</label><br>
+    <select name="genre">
+      <option value="">Choose genre...</option>
+      <option value="Action">Action</option>
+      <option value="Adventure">Adventure</option>
+      <option value="Fantasy">Fantasy</option>
+      <option value="Horor">Horor</option>
+      <option value="Romance">Romance</option>
+    </select><br><br>
+    <label>Author</label><br>
+    <input type="text" name="author"><br><br>
+    <label>ISBN</label><br>
+    <input type="text" name="isbn"><br><br>
+    <label>Total Page</label><br>
+    <input type="number" name="totalPage"><br><br>
+    <label>Publisher</label><br>
+    <input type="text" name="publisher"><br><br>
+    <label>Stock</label><br>
+    <input type="number" name="stock"><br><br>
+    <label>Image URL</label><br>
+    <input type="text" name="imgurl"><br><br>
+    <button type="submit">Save</button>
+    <button>
+      <a href="/comiclist" style="text-decoration: none; color: black;">Cancel</a>
+    </button>
+  </form>
+</body>
+</html>
