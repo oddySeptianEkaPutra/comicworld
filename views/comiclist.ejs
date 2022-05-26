@@ -25,8 +25,11 @@
                 <div class="nav-elements">
 
                     <ul class="nav-content">
-                        
-                        <li> <a> <i class="fas fa-address-card"></i> Hi <%= user %>  </a> </li>
+                        <% if (!user) { %>
+                            <li> <a></a> </li>
+                         <% } else { %>
+                            <li> <a> <i class="fas fa-address-card"></i> Hi <%= user %>  </a> </li>
+                        <% } %>
                         <li> <a href="/comiclist" title="Home" class="active"> <i class="fas fa-home"></i> Galeri </a> </li>
                         <li>
 
@@ -51,7 +54,7 @@
 
                     </ul>
 
-                    <form class="search-area" style="margin-left: 200px;" action="/comiclist" method="get">
+                    <form class="search-area" style="margin-left: 150px;" action="/comiclist" method="get">
                         <input type="text" name="search" placeholder="Search Item" title="Search Item">
                         <button class="btn-search" type="submit">Search</button>
                     </form>
@@ -103,7 +106,7 @@
                                 <td style="font-size: 12px;">
                                     <%= element.stock %>
                                 </td>
-                                <td><a href="/comiclist/buy/<%= element.id %>"><button style="font-size: 12px;">Buy</button></td>
+                                <td><a href="/transaction/<%= element.id %>"><button style="font-size: 12px;">Buy</button></td>
                             </tr>
                             <tr class="spacer">
                                 <td colspan="100"></td>

@@ -7,8 +7,11 @@
 
 // npx sequelize model:create --name Transaction --attributes transactionNumber:string,dateTransaction:date,price:integer,quantity:integer
 
-const bcrypt = require('bcryptjs')
-const salt = bcrypt.genSaltSync(10);
-const hash = bcrypt.hashSync("tester yak", salt)
+// const bcrypt = require('bcryptjs')
+// const salt = bcrypt.genSaltSync(10);
+// const hash = bcrypt.hashSync("tester yak", salt)
 
-console.log(hash)
+// console.log(hash)
+
+let nilai = new Date().getTime()
+console.log(nilai)

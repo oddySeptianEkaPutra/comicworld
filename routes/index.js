@@ -1,6 +1,7 @@
 const ComicController = require('../controllers/ComicController');
 const ProfileController = require('../controllers/ProfileController');
 const Profile = require('../controllers/ProfileController');
+const TransactionController = require('../controllers/TransactionController');
 const UserController = require("../controllers/UserController");
 const router = require("express").Router();
 
@@ -43,6 +44,8 @@ router.get('/delete/:id',isAdmin, ComicController.deleteBook);
 router.get('/comiclist/addBook', isAdmin, ComicController.addBook)
 router.post('/comiclist/addBook', isAdmin, ComicController.saveBook)
 router.get('/Profile', ProfileController.showProfile)
-
-
+router.get('/Edit_Profile', ProfileController.updateProfile)
+router.post('/Edit_Profile', ProfileController.editProfile)
+router.get('/transaction/:id', TransactionController.getTransaction)
+router.post('/transaction/:id', TransactionController.postTransaction)
 module.exports = router; 
