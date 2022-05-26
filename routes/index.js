@@ -42,7 +42,6 @@ router.get('/restock/:id',isAdmin, ComicController.restock);
 router.get('/delete/:id',isAdmin, ComicController.deleteBook);
 router.get('/comiclist/addBook', isAdmin, ComicController.addBook)
 router.post('/comiclist/addBook', isAdmin, ComicController.saveBook)
-
 router.get('/Profile', ProfileController.showProfile)
 
 

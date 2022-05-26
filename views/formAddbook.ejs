@@ -9,7 +9,13 @@
 <body>
   <h1>Add Book</h1>
   <hr>
-  <form action="/comiclist/add" method="post">
+  <%if(errors){%>
+    <% errors= errors.split(",")%> 
+    <% errors.forEach(el => { %>
+        <pre style="color: red;"><%= el %> </pre>
+    <% }) %>
+  <%}%>
+  <form action="/comiclist/addBook" method="post">
     <label>Title</label><br>
     <input type="text" name="title"><br><br>
     <label>Price</label><br>
