@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const formatMoney= require('../helpers/formatMoney')
 
 function sendEmail(data){
     const price = data[0].price
@@ -17,7 +18,7 @@ function sendEmail(data){
         from : "comic.world666@gmail.com",
         to : `${email}`,
         subject: "Pembelian Komik",
-        text: `Terima Kasih telah membeli komik kami dengan quantity ${quantity} dan harga Rp.${price.tolocalestring()}`
+        text: `Terima Kasih telah membeli komik kami dengan quantity ${quantity} dan harga ${formatMoney(price)}`
     };
     
     
