@@ -1,0 +1,10 @@
+.modal-dialog,
+.modal-content {
+    /* 100% of window height */
+    height: 95%;
+}
+
+.modal-body {
+    /* 100% = dialog height, 120px = header + footer */
+    overflow-y: scroll;
+}

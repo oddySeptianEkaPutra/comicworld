@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="comiclist.css">
+
+    <title>ComicWorld</title>
+  </head>
+  <body>
+  
+
+  <div class="content">
+    
+    <div class="container">
+      <h2 class="mb-5">Comic List</h2>
+      
+
+      <div class="table-responsive custom-table-responsive">
+
+        <table class="table custom-table">
+          <thead>
+            <tr>
+              <th style="font-size: 15px;">Comic</th>               
+              <th style="font-size: 15px;">Title</th>
+              <th style="font-size: 15px;">Genre</th>
+              <th style="font-size: 15px;">ISBN</th>
+              <th style="font-size: 15px;">Publisher</th>
+              <th style="font-size: 15px;">Total Page</th>
+              <th style="font-size: 15px;">Price</th>
+              <th style="font-size: 15px;">Stock</th>
+              <th style="font-size: 15px;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+              <% comic.forEach(element => { %>
+                
+                <tr>
+                  <td> <img src=<%=element.imgurl%> width="120" height="200" alt="..."></td>
+                  <td style="font-size: 12px;"><%= element.title %> </td>
+                  <td style="font-size: 12px;"><%= element.genre %> </td>
+                  <td style="font-size: 12px;"><%= element.isbn %> </td>
+                  <td style="font-size: 12px;"><%= element.publisher %> </td>
+                  <td style="font-size: 12px;"><%= element.totalPage %> </td>
+                  <td style="font-size: 12px;"><%= formatMoney(element.price)%> </td>
+                  <td style="font-size: 12px;"><%= element.stock %> </td>
+                  <td><button style="font-size: 12px;">Buy</button></td>
+                </tr>
+                <tr class="spacer"><td colspan="100"></td></tr>
+              <% }) %>
+          
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+
+  </div>
+    
+    
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
