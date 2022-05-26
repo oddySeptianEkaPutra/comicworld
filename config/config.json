@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "postgres",
-    "password": "postgres",
+    "password": "12345678",
     "database": "ComicWorldDB",
     "host": "localhost",
     "dialect": "postgres"
