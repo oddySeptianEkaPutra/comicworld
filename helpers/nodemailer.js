@@ -1,7 +1,10 @@
 const nodemailer = require('nodemailer');
 
-function nodemailer(data){
-    
+function sendEmail(data){
+    const price = data[0].price
+    const quantity = data[0].quantity
+    const email = data[0].User.email
+
     const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -12,9 +15,9 @@ function nodemailer(data){
     
     const options = {
         from : "comic.world666@gmail.com",
-        to : "awalludin.jamil17@gmail.com",
-        subject: "Testing nodemailer",
-        text: "Pesan kedua"
+        to : `${email}`,
+        subject: "Pembelian Komik",
+        text: `Terima Kasih telah membeli komik kami dengan quantity ${quantity} dan harga Rp.${price.tolocalestring()}`
     };
     
     
@@ -28,4 +31,4 @@ function nodemailer(data){
 
 }
 
-module.exports
+module.exports = sendEmail

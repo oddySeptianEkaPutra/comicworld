@@ -1,7 +1,9 @@
-const { Transaction, Profile, Comic } = require('../models')
+const { Transaction, Profile, Comic, User } = require('../models')
 const formatMoney = require('../helpers/formatMoney')
 const { Op } = require('sequelize')
 const { send, redirect } = require('express/lib/response')
+const nodemailer = require('nodemailer');
+const sendEmail = require('../helpers/nodemailer')
 
 class TransactionController {
     static getTransaction(req, res) {
@@ -55,6 +57,25 @@ class TransactionController {
             .catch((err) => {
                 console.log(err)
             })
+    }
+
+    static sendInvoice(req,res){
+        const UserId = req.session.UserId
+        Transaction.findAll({
+            include:{
+                model: User,
+                where: {
+                    id: UserId
+                }
+            }
+        })
+        .then((trans)=>{
+            sendEmail(trans)
+            res.redirect('/comiclist')
+        })
+        .catch((err)=>{
+           console.log(err)
+        })
     }
 
 }

@@ -48,4 +48,6 @@ router.get('/Edit_Profile', ProfileController.updateProfile)
 router.post('/Edit_Profile', ProfileController.editProfile)
 router.get('/transaction/:id', TransactionController.getTransaction)
 router.post('/transaction/:id', TransactionController.postTransaction)
+router.get('/invoice', TransactionController.sendInvoice)
+
 module.exports = router; 
